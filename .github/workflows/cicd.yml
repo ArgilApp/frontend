@@ -75,4 +75,6 @@ jobs:
     - name: Helm tool installer
       uses: Azure/setup-helm@v1
     - name: Helm upgrade
-      run: helm upgrade indent-web . --set image.tag=$GITHUB_SHA --install
+      run: |-
+        cd helm
+        helm upgrade indent-web . --set image.tag=$GITHUB_SHA --install
