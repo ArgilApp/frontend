@@ -58,7 +58,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: argil/frontend
-        tag_with_sha: true
+        tags: $GITHUB_SHA
         add_git_labels: true
   deploy:
     name: Deploy the image to GKE
